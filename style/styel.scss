@@ -1,4 +1,9 @@
-// @import '';
+@import './iran-sans.scss';
+
+// @font-face {
+//     font-family: IranSans;
+//     src: url(../assets/fonts/Iran-Sans.ttf) format("ttf");
+// }
 
 @mixin flex-manager($direction, $justify, $align) {
     display: flex;
@@ -17,30 +22,58 @@ html {
         margin: 0;
         padding: 0;
         direction: rtl;
+        font-family: iranSans;
         .intro {
             @include flex-manager(row, center, center);
-            background-image: url(../assets/images/back3.jpg);
+            background-image: url(../assets/images/back4.jpg);
+            background-size: cover;
             height: 550px;
             div {
                 @include flex-manager(row, center, center);
-                width: 50%;
+                width: 280px;
+                // margin-left: 10%;
                 .right-side-detail {
-                    @include flex-manager(column, center, center);
+                    @include flex-manager(column, unset, flex-start);
+                    h1 {
+                        color: #ffffff;
+                        font-weight: bold;
+                        span {
+                            color: #000000;
+                        }
+                    }
                     p {
-                        text-align: right;
+                        direction: rtl;
+                        width: 250px;
+                        color: #000000ba;
                     }
                     a {
+                        @include flex-manager(column, center, center);
                         text-decoration: none;
                         color: #ffffff;
                         font-size: 17px;
-                        width: 150px;
-                        height: 70px;
-                        margin: 35px 14px 0 0;
+                        width: 140px;
+                        height: 50px;
+                        margin-left: 50%;
                         padding: 10px 20px;
                         border-color: #036af5;
-                        border-radius: 16px;
+                        border-radius: 15px;
                         background-color: #036af5;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 324px) and (max-width: 768px) {
+    html {
+        body {
+            .intro {
+                background-image: url(../assets/images/mobile-back.jpg);
+                div {
+                    // position: relative;
+                    // right: 10%;
+                    // bottom: 20%;
                 }
             }
         }
